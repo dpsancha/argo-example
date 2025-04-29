@@ -12,6 +12,6 @@ spec:
     server: "https://kubernetes.default.svc"
   project: a400m-ref-data
   source:
-    path: "a400m-ref-data/namespace-config"
-    repoURL: "https://bitbucket.bigdata.de.airbusds.corp/scm/am/a400m_platform_live_state.git"
+    path: "namespace-config"
+    repoURL: "https://github.com/dpsancha/argo-example"
     targetRevision: HEAD
