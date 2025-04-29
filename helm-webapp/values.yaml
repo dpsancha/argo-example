@@ -1,4 +1,6 @@
 appName: sdp-poc
+service: servicedataplatform-dev
+namespace: a400m-ref-data
 
 # Configmap
 configmap:
