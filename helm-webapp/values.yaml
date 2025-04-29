@@ -1,0 +1,23 @@
+appName: sdp-poc
+
+# Configmap
+configmap:
+  name: sdp-configmap-v1
+
+# Backend configuration
+backend:
+  image:
+    repository: dperezsa/poc-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi
+  service:
+    type: ClusterIP
+    port: 8000
