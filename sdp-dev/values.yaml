@@ -1,5 +1,6 @@
 appName: sdp-poc
 service: servicedataplatform-dev
+namespace: a400m-ref-data
 
 # Configmap
 configmap:
@@ -8,8 +9,8 @@ configmap:
 # Backend configuration
 backend:
   image:
-    repository: bigdata-registry.de.airbusds.corp:5443/a400m_reference_data
-    tag: 1ac2392
+    repository: dperezsa/poc-backend
+    tag: latest
     pullPolicy: IfNotPresent
   replicaCount: 1
   resources:

@@ -17,4 +17,4 @@ spec:
         - destination:
             host: {{ .Values.appName }}-backend
             port:
-              number: {{ .Values.port }}
+              number: {{ .Values.backend.service.port }}
