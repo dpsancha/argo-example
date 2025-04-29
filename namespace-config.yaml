@@ -4,8 +4,6 @@ kind: Application
 metadata:
   name: namespace-config
   namespace: a400m-ref-data
-  labels:
-    classification: Airbus-Amber
 spec:
   destination:
     namespace: a400m-ref-data
