@@ -1,0 +1,4 @@
+appName: sdp-poc
+namespace: a400m-ref-data
+service: servicedataplatform-dev
+port: 8000

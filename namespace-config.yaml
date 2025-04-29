@@ -1,0 +1,17 @@
+# classification: "Airbus Amber"
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespace-config
+  namespace: a400m-ref-data
+  labels:
+    classification: Airbus-Amber
+spec:
+  destination:
+    namespace: a400m-ref-data
+    server: "https://kubernetes.default.svc"
+  project: a400m-ref-data
+  source:
+    path: "a400m-ref-data/namespace-config"
+    repoURL: "https://bitbucket.bigdata.de.airbusds.corp/scm/am/a400m_platform_live_state.git"
+    targetRevision: HEAD

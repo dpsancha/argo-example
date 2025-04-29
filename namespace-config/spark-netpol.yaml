@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-spark-communication
+  namespace: a400m-ref-data
+spec:
+  podSelector: {}
+  ingress:
+    - ports:
+        - port: 7077
+          protocol: TCP
+        - port: 7078
+          protocol: TCP
+        - port: 7079
+          protocol: TCP
+        - port: 7337
+          protocol: TCP
+      from:
+        - podSelector: {}
+  egress:
+    - ports:
+        - port: 7077
+          protocol: TCP
+        - port: 7078
+          protocol: TCP
+        - port: 7079
+          protocol: TCP
+        - port: 7337
+          protocol: TCP
+      to:
+        - podSelector: {}

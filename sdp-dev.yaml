@@ -1,0 +1,26 @@
+# classification: "Airbus Amber"
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sdp-dev
+  namespace: a400m-ref-data
+  labels:
+    classification: Airbus-Amber
+spec:
+  project: a400m-ref-data
+  destination:
+    namespace: a400m-ref-data
+    server: "https://kubernetes.default.svc"
+  sources:
+    - repoURL: "https://bitbucket.bigdata.de.airbusds.corp/scm/am/a400m_platform_live_state.git"
+      path: "a400m-ref-data/sdp-dev"
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+          - values.yaml 
+    - repoURL: "https://bitbucket.bigdata.de.airbusds.corp/scm/am/a400m_platform_live_state.git"
+      path: "a400m-ref-data/sdp-virtual-svc"
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+          - values.yaml 

@@ -1,0 +1,24 @@
+appName: sdp-poc
+service: servicedataplatform-dev
+
+# Configmap
+configmap:
+  name: sdp-configmap-v1
+
+# Backend configuration
+backend:
+  image:
+    repository: bigdata-registry.de.airbusds.corp:5443/a400m_reference_data
+    tag: 1ac2392
+    pullPolicy: IfNotPresent
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi
+  service:
+    type: ClusterIP
+    port: 8000

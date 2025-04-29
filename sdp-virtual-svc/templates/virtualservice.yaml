@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: {{ .Values.service }}
+  namespace: {{ .Values.namespace }}
+spec:
+  gateways:
+    - default/istio-gw-vlan-647-https
+    - default/istio-failover-gw-vlan-647-https
+  hosts:
+    - {{ .Values.service }}.bigdata.deepz.de.airbusds.corp
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: {{ .Values.appName }}-backend
+            port:
+              number: {{ .Values.port }}
